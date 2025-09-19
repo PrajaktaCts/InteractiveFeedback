@@ -1,0 +1,76 @@
+<!-- <p>project-feedback-dialog works!</p> -->
+<div class="feedback-Content">
+<div class="feedback-header" >
+  <div class="header-title">Project Feedback</div>
+  <button mat-icon-button (click)="closeDialog()" class="close-button" matTooltip="Close">
+    <mat-icon>close</mat-icon>
+  </button>
+</div>
+<div class="feedback-wrapper" [formGroup]="feedbackForm" #dialogContent>
+
+ <div class="experiencediv">
+  <label class="label1">How would you rate your experience?<span class="required">*</span></label>
+   <div class="rating-stars">
+    <div *ngFor="let star of [1,2,3,4,5]" (click)="setRating(star)"  class="circle" [class.active]="star <= rating" [ngClass]="'size-' + star">
+      {{ star }}
+    </div>
+  </div>
+  </div>
+
+  <!-- Worked Well -->
+  <div class="workwelldiv">
+  <label class="label2">What worked well?<span class="required">*</span></label>
+  <mat-form-field appearance="outline" class="workedwellinput">
+  <textarea cdkTextareaAutosize cdkAutosizeMinRows="1" cdkAutosizeMaxRows="2" row="1" cols="" matInput type="text" formControlName="workedWell" placeholder="Tell us more"></textarea>
+  </mat-form-field>
+  </div>
+  <!-- Improved -->
+   <div class="improvediv">
+  <label class="label3">How can we improve?<span class="required">*</span></label>
+  <mat-form-field appearance="outline" class="improveinput">
+  <textarea cdkTextareaAutosize cdkAutosizeMinRows="1" cdkAutosizeMaxRows="2" row="1" cols=""  matInput type="text" formControlName="improved" placeholder="Tell us more" ></textarea>
+  </mat-form-field>
+  </div>
+  <!-- Additional Comments -->
+  <!-- <label>Additional Comments:</label>
+  <textarea formControlName="comments"></textarea> -->
+
+  <!-- Contact Preference -->
+   <div class="emaildiv">
+  <label class="label4">Attach Screenshot (Optional)</label>
+  <div class="emailinput">
+    <input type="file" accept="image/*" class="custom-file" (change)="onFileSelected($event)" name="" id="">
+  </div>
+    <!-- <mat-form-field appearance="outline" class="emailinput">
+      <textarea (input)="scrollToSubmitIfNeeded()" cdkTextareaAutosize cdkAutosizeMinRows="1" cdkAutosizeMaxRows="2" row="1" cols="" matInput type="text" formControlName="contactByEmail" placeholder="someone@something.com" ></textarea>
+    
+    </mat-form-field> -->
+    <!-- <label>
+      <input type="checkbox" formControlName="contactByPhone" />
+      Phone
+    </label> -->
+  </div>
+  <!-- <div class="tagdiv">
+  <label class="label5">Suggested Tags</label>
+  <mat-chip-set class="chips">
+    <mat-chip *ngFor="let tag of suggestedTags" selectable="true" removable="true" (removed)="removeTag(tag)">
+      {{ tag }}
+      <mat-icon matChipRemove>cancel</mat-icon>
+    </mat-chip>
+  </mat-chip-set>
+</div> -->
+
+
+  <!-- <button type="submit" (click)="onSubmit()">Submit</button> -->
+  <!-- Submit Button -->
+   <div class="outside" #submitSection>
+   <div class="submit-div">
+  <button (click)="onSubmit()" class="submit-btn" >Submit</button>
+  </div>
+  </div>
+</div>
+<div class="error">
+   <div *ngIf="error">{{error}}</div>
+</div>
+</div> 
+

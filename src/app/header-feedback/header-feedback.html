@@ -1,0 +1,91 @@
+
+<div class="header">
+<div class="dashboard">
+<mat-toolbar>
+  <button matIconButton class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span class="logo"><img  src="Images/Comcast_Advertising_logo 1.png" alt="logo"></span><br><br>
+  <span class="admin">Admin Dashboard</span>
+  <span class="example-spacer"></span>
+  <!-- Vertical divider -->
+  <span class="vertical-divider"></span>
+  <!-- Profile dropdown -->
+  <button mat-button [matMenuTriggerFor]="profileMenu" class="profile">
+    <mat-icon>account_circle</mat-icon>
+    <strong>{{username}}</strong>
+    <small>Admin</small>
+      
+  </button>
+  <mat-icon class="arrow-icon">expand_more</mat-icon>
+  <mat-menu #profileMenu="matMenu">
+    <button mat-menu-item>
+      <mat-icon>person</mat-icon>
+      <span>My Account</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>settings</mat-icon>
+      <span>Settings</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>logout</mat-icon>
+      <span>Logout</span>
+    </button>
+  </mat-menu>
+</mat-toolbar>
+</div>
+    <!-- <div class="profile">Alex M.Grim</div> -->
+</div>
+<div class="Container">
+    <!-- <div class="feedbackdiv">
+        <div class="feedback-header">
+            <div class="feedback-title">Component Level Feedback</div>
+        </div>
+        <div class="feedback-content">
+            
+            <div class="user-name">Alex M.Grim</div>
+            <div class="feedback">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </div>
+            <div class="bg">
+                <button mat-icon-button color="primary">
+                    <mat-icon>edit</mat-icon>
+                </button>
+
+                <button mat-icon-button color="warn" >
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </div>
+            <div class="Date">07/17/2025 | 09:23</div>
+        </div>
+    </div> -->
+
+    <div class="feedbackdiv" >
+        <div class="feedback-header">
+            <div class="feedback-title">{{componentName}} Feedback</div>
+        </div>
+        <div class="feedback-content"  *ngFor="let feedback of filteredData; let i = index" [ngClass]="{even: i % 2 === 0,odd: i % 2 !== 0,'positive': feedback.like === true,'negative': feedback.dislike === true, 'neutral': feedback.like === false && feedback.dislike === false}">
+            <div ></div>
+            <div class="user-name">{{feedback.username}}</div>
+            <div class="feedback">
+              {{feedback.comments}}  
+              <!-- {{feedback.role}} -->
+            </div>
+            <div class="bg">
+                <button mat-icon-button color="primary"  *ngIf="feedback.user_ID == uId ">
+                    <mat-icon  (click)="openPopup(feedback.id)">edit</mat-icon>
+                </button>
+
+                <button mat-icon-button color="warn" *ngIf="feedback.user_ID == uId ">
+                    <mat-icon (click)="deleteFeedback(feedback.id)">delete</mat-icon>
+                </button>
+            </div>
+            <div class="Date">{{feedback.createdTime |date:'yyyy-MM-dd'}} | {{feedback.createdTime | date:'HH:mm'}}</div>
+        </div>
+    </div>
+    <div class="NotFound" *ngIf="filteredData?.length == 0">Result Not Found</div>
+    <div ><br>
+      
+
+    </div>
+</div>

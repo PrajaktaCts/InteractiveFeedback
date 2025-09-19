@@ -1,0 +1,32 @@
+<mat-sidenav-container class="example-container">
+  <mat-sidenav #sidenav mode="over" class="mat-sidenav">
+    <div class="header">
+      <img src="Images/Logo.png" alt="logo" />
+    </div>
+
+    <mat-nav-list class="menu-content">
+      <a mat-list-item class="list-item-gap" routerLink="/dashboard" routerLinkActive="active-link">
+        <span>Dashboard</span></a>
+      <a mat-list-item class="list-item-gap" routerLink="/feedback" routerLinkActive="active-link">
+        <span>Feedback</span></a>
+      <a mat-list-item class="list-item-gap" routerLink="/">
+        <span>Linear Ranker </span></a>
+
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-toolbar class="icon-container">
+    <button mat-icon-button (click)="sidenav.toggle()" style=" background-color: black;">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <a href="/dashboard" class="icon-link"><mat-icon class="fixed-icons" routerLink="/dashboard" routerLinkActive="active-link"> list_alt
+    </mat-icon></a>
+    <a href="/feedback" class="icon-link"><mat-icon class="fixed-icons" routerLink="/feedback" routerLinkActive="active-link"> edit</mat-icon>
+      </a>
+    <mat-icon class="fixed-icons"> show_chart</mat-icon>
+
+  </mat-toolbar>
+
+
+
+</mat-sidenav-container>

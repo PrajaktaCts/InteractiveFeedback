@@ -1,0 +1,15 @@
+canvas{
+  max-width: 688px;
+    max-height: 357.96px;
+    /* top: 84px;
+    left: 21px; */
+    border: 1px;
+    margin: 0 auto;
+  padding: 16px;
+  padding-bottom: 30px;
+}
+.pie-chart-container {
+  width: 100%;
+  height: 400px;
+  min-height: 300px;
+}

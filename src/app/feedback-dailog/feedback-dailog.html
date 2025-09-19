@@ -1,0 +1,56 @@
+
+<div class="feedback-Content">
+<div class="feedback-header" >
+  <div class="header-title">Feedback on {{ data.title }}</div>
+  <button mat-icon-button (click)="closeDialog()" class="close-button" matTooltip="Close">
+    <mat-icon>close</mat-icon>
+  </button>
+</div>
+<div class="feedback-wrapper"  [formGroup]="feedbackForm" >
+ 
+  <!-- Star Rating -->
+  <div class="rating-stars">
+    <mat-icon *ngFor="let star of [1,2,3,4,5]" (click)="setRating(star)" [ngClass]="'size-' + star">
+      {{ star <= rating ? 'star' : 'star_border' }}
+    </mat-icon>
+  </div>
+
+
+<div class="comment-content" #dialogContent>
+  <!-- Comment Box -->
+<div class="Comment">
+  <label for="commentBox" class="comment-label">Comments</label>
+  <!-- <div class="reaction-controls"> -->
+  <!-- Like & Dislike Buttons -->
+  <!-- <div class="reaction-buttons"> -->
+    <button mat-icon-button class="mat-primary " (click)="setReaction('like')" [ngClass]="{ 'active-like': isLiked }">
+      <mat-icon class="mat-size">thumb_up</mat-icon>
+    </button>
+    <button mat-icon-button class="mat-warn " (click)="setReaction('dislike')" [ngClass]="{ 'active-dislike': isDisliked }">
+      <mat-icon class="mat-size">thumb_down</mat-icon>
+    </button>
+  <!-- </div> -->
+  <!-- </div> -->
+</div>
+  <mat-form-field appearance="outline" class="comment-box">
+    
+        <textarea cdkTextareaAutosize cdkAutosizeMinRows="1" cdkAutosizeMaxRows="4"  rows="1" cols="" matInput  formControlName="comments" placeholder="Tell us more"></textarea>
+    
+  </mat-form-field>
+<!-- Submit Button -->
+  <div class="outside" #submitSection>
+   <div class="submit-div">
+  <button   (click)="AddFeedback()" class="submit-btn" >Submit</button>
+  </div>
+  </div>
+</div>
+  <div class="error">
+   <div *ngIf="error">{{error}}</div>
+   </div>
+
+</div>
+   
+</div>
+
+
+<!-- <mat-error *ngIf="error!=0">Email is <strong>required</strong></mat-error> -->

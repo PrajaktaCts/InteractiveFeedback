@@ -1,0 +1,298 @@
+.container {
+  margin-left: 100px;
+  /* width: 100%;
+  background-color: aquamarine; */
+}
+.info-icon {
+  width: 24px;
+  height: 24px;
+  top:165px;
+  left:369px;
+  font-size: 20px;
+  cursor: pointer;
+  vertical-align: middle;
+  user-select: none;
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+.container-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+}
+.component-title {
+  margin: 0;
+  font-size: 24px;
+
+font-family: "Open Sans";
+font-size: 24px;
+font-style: normal;
+font-weight: 600;
+line-height: 24px; /* 150% */
+/* color :White; */
+}
+/* .tableborder{
+  border: 2px red solid;
+  border-radius: 22px;
+} */
+
+
+.Status.active {
+  border: 2px green solid;
+  width: 130px;
+  height: 30px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.Status.expired {
+  border: 2px rgb(212, 212, 117) solid;
+  width: 80px;
+  height: 30px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.Status.error {
+  border: 2px red solid;
+  width: 60px;
+  height: 30px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+table {
+  width: 100%;
+}
+
+table,
+td {
+  height: 50px;
+
+
+}
+
+.paragraph {
+  margin-top: 0px;
+}
+
+/* .status{
+    
+    border: green 3px solid;
+    perspective: 5px;
+    border-radius: 20px;
+  }
+  #stat{
+     border-color: yellow;
+     border-width: 3px;
+     
+     border-radius: 2px;
+  } */
+
+.fa {
+  padding-left: 0px;
+}
+
+.date1 {
+  width: 150px;
+
+}
+
+.date2 {
+  width: 150px;
+}
+
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.search-field {
+  margin-top: 18px;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 300px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+
+.orderList {
+  /* margin-top: 12px;
+    position: fixed;
+    margin-left: 145px;
+    font-size: 16px; */
+  color: #089ad9;
+}
+
+.header {
+  height: 25%;
+}
+
+.col-md-2 {
+  right: 100px;
+}
+
+.header img {
+  width: 170px;
+  float: left;
+  padding-top: 50px;
+}
+
+.header-search {
+  width: 750px;
+  right: 250px;
+  position: absolute;
+  padding-top: 20px;
+  margin-left: 200px;
+}
+
+.header-media {
+  position: absolute;
+  padding-top: 120px;
+  left: 390px;
+}
+
+.search-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-menu {
+  top: 30;
+}
+.spiner-container{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display:flex;
+  background-color: rgba(255,255,255,0.8);
+  align-items: center;
+  justify-content: center;
+}
+.spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 2s linear infinite;
+}
+.spiner-container.show {
+  visibility: visible;
+}
+@keyframes spin {
+  0% { transform:  rotate(0deg);}
+  100% { transform: rotate(360deg);}
+}
+.three-dots:after {
+  cursor: pointer;
+  color: rgb(21, 2, 2);
+  content: '\2807';
+  font-size: 20px;
+  padding: 0 5px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a div {
+  padding: 4px;
+  text-align:center;
+}
+
+.dropdown {
+  position: absolute;
+  padding-left: 5px;
+  background-color: rgb(234, 234, 240);
+  box-shadow: 0px 0px 3px 3px rgb(220, 220, 224);
+  outline: none;
+  opacity: 0;
+  z-index: -1;
+  max-height: 10px;
+  transition: opacity 0.1s, z-index 0.1s;
+  max-height: 5s;
+}
+
+.dropdown-container:focus {
+  outline: none;
+}
+
+.dropdown-container:focus .dropdown {
+  opacity: 1;
+  z-index: 100;
+  max-height: 100vh;
+  transition: opacity 0.2s, z-index 0.2s;
+   max-height: 0.2s;
+}
+.No-Data {
+  position: absolute;
+  top: 70%;
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+}
+.error-message {
+  color: red;
+  font-size: 24px;
+  font-weight: bold;
+}
+.alert {
+  position: absolute;
+  top: 60%;
+  right: 500px;
+  text-align: center;
+  font-size: 18px;
+  background-color: #f44336;
+  color: white;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.pagination-bottom-right{
+ position: relative;
+  width:450px;
+ bottom: 0;
+ left: 710px;
+ display:flex
+}
+#option{
+  width:40px;
+  left:45%;
+  height:28px;
+  border: none;
+  padding-top: 0px;
+ 
+}
+.closebtn:hover {
+  color: black;
+}
+
+
+#page{
+  padding-top: 0px;
+  height:20px;
+  border: none;
+}

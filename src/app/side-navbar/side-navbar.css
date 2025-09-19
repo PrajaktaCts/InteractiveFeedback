@@ -1,0 +1,98 @@
+.example-container {
+  position: static;
+  top: 20;
+  bottom: 0;
+  left: 0;
+  /* right: 0; */
+  width: 200px;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+
+}
+
+#icon {
+  padding-right: 25px;
+  font-size: 1.6em;
+}
+
+.mat-icon {
+  transform: scale(1.4);
+  margin: 1%;
+
+}
+
+.fixed-icons {
+  margin-top: 65px;
+  left: 10%;
+  font-size: 1.2em;
+
+}
+
+.icon-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: aliceblue;
+  background-color: black;
+  height: 100%;
+  width: 47px;
+  position: fixed;
+  z-index: 2;
+}
+
+
+.menu-content {
+  padding-top: 60px;
+  margin-top: 36px;
+  margin-left: 10px;
+
+}
+
+.list-item-gap {
+  margin-bottom: 54px;
+}
+
+
+.header img {
+  width: 150px;
+  float: right;
+  height: 50px;
+  margin-top: 10px;
+
+}
+
+.mat-sidenav {
+  background-color: black;
+  width: 200px;
+  height: 100%;
+  padding-left: 30px;
+  z-index: 1;
+  
+
+}
+span{
+  color: aliceblue;
+  font-weight: bold;
+}
+
+mat-nav-list {
+  color: white;
+  font-size: 16px;
+}
+
+button {
+  color: rgb(243, 239, 239);
+}
+.icon-link{
+  text-decoration: none;       /* Removes underline */
+  color: inherit;              /* Inherits color from parent */
+  display: flex;               /* Aligns icon properly */
+  align-items: center;
+  padding: 8px;                /* Optional: adds spacing like a button */
+  border-radius: 4px;  
+}
+
+.icon-link:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Optional hover effect */
+}

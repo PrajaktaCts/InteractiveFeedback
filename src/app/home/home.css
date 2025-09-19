@@ -1,0 +1,38 @@
+.header {
+  height: 25%;
+}
+
+.col-md-2 {
+  right: 200px;
+}
+
+.header img {
+  width: 170px;
+  float: left;
+  padding-top: 50px;
+}
+
+.header-search {
+  width: 750px;
+  right: 250px;
+  position: absolute;
+  padding-top: 20px;
+  margin-left: 200px;
+}
+
+.header-media {
+  position: absolute;
+  padding-top: 120px;
+  left: 390px;
+}
+
+.search-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-menu {
+  top: 30;
+}

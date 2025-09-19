@@ -1,0 +1,31 @@
+<div class="row">
+  <!-- <div class="col-md-2">
+  </div> -->
+  <div class="col-md-8 text-center">
+    <!-- <div> -->
+      <app-header class="header-search"  ></app-header>
+
+    <!-- </div> -->
+  </div>
+  <div class="col-md-2">
+    <div class="header-menu">
+      <app-side-navbar></app-side-navbar>
+    </div>
+  </div>
+</div><br><br> <br><br>
+
+<div class="container">
+<div class="container-header">
+  <h1 class="component-title">{{componentTitle}}</h1>
+  <button class="info-icon" mat-icon-button matTooltip="More info about orders">
+    <mat-icon (click)="openInfoDialog()">announcement</mat-icon>
+  </button>
+  
+ 
+</div>
+<p>Component list here</p>
+
+
+</div><br><br>
+
+<app-order></app-order>

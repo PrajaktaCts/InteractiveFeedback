@@ -37,6 +37,30 @@
         <textarea cdkTextareaAutosize cdkAutosizeMinRows="1" cdkAutosizeMaxRows="4"  rows="1" cols="" matInput  formControlName="comments" placeholder="Tell us more"></textarea>
     
   </mat-form-field>
+
+  <div class="tagdiv">
+  <label class="label5">Suggested Tags</label><br>
+
+  <mat-form-field class="taginput">
+    <input class="tagIp"
+    #tagInput
+        placeholder="Add a tag..."
+        [matChipInputFor]="chipGrid"
+        [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+        [matChipInputAddOnBlur]="true"
+        (matChipInputTokenEnd)="addTag($event)">
+         <button mat-icon-button matSuffix (click)="submitTag(tagInput)">
+      <mat-icon >arrow_forward</mat-icon>
+    </button>
+    <mat-chip-grid #chipGrid  aria-label="Tag selection" class="chips">
+      <mat-chip *ngFor="let tag of suggestedTags" selectable="true" removable="true" (removed)="removeTag(tag)">
+        {{ tag }}
+        <mat-icon matChipRemove>cancel</mat-icon>
+      </mat-chip>
+      
+    </mat-chip-grid>
+  </mat-form-field>
+</div>
 <!-- Submit Button -->
   <div class="outside" #submitSection>
    <div class="submit-div">

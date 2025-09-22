@@ -51,8 +51,12 @@ export class LikePiechart implements OnInit{
   setupChart(){
     
 console.log('LikePercentage',this.likePercent)
+const total = this.likePercent + this.dislikePercent;
   this.pieChartData = {
-    labels: ['Likes', 'Dislikes'],
+    labels: [
+    `Likes (${((this.likePercent / total) * 100).toFixed(2)}%)`,
+    `Dislikes (${((this.dislikePercent / total) * 100).toFixed(2)}%)`
+  ],
     datasets: [{
       data: [this.likePercent ,this.dislikePercent],
       backgroundColor: ['#008CC3', '#B42846']
@@ -87,7 +91,10 @@ console.log('LikePercentage',this.likePercent)
         
       }
        },
-      tooltip: { enabled: true }
+      tooltip: { enabled: true ,
+        
+      },
+      
     }
   };
 }

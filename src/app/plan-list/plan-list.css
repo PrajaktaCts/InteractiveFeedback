@@ -1,0 +1,31 @@
+.container {
+  margin-left: 100px;
+  /* width: 100%;
+  background-color: bisque; */
+  
+}
+.info-icon {
+  font-size: 20px;
+  cursor: pointer;
+  vertical-align: middle;
+  user-select: none;
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+.container-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+}
+.component-title {
+  margin: 0;
+  font-size: 24px;
+  
+font-family: "Open Sans";
+font-size: 24px;
+font-style: normal;
+font-weight: 600;
+line-height: 24px; 
+}

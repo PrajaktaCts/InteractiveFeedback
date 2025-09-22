@@ -8,6 +8,9 @@ import { Order } from './order/order';
 import { Dashboard } from './dashboard/dashboard';
 import { StarPiechart } from './star-piechart/star-piechart';
 import { HeaderFeedback } from './header-feedback/header-feedback';
+import { TagSection } from './tag-section/tag-section';
+import { PlanList } from './plan-list/plan-list';
+import { FeedbackPlan } from './feedback-plan/feedback-plan';
 
 export const routes: Routes = [
     {path: 'feedback', component: Feedback, title: 'feedback'},
@@ -19,5 +22,8 @@ export const routes: Routes = [
     {path: 'header-feedback/:component', component: HeaderFeedback, title: 'header-feedback'},
     {path: 'dashboard', component: Dashboard, title: 'dashboard'},
     {path: 'star-piechart', component: StarPiechart, title: 'star-piechart'},
+    {path: 'tagSection', component: TagSection, title: 'tagSection'},
+    {path: 'pList', component: PlanList, title: 'pList'},
+    {path: 'planList', component: FeedbackPlan, title: 'planList'},
     {path: '**', redirectTo: 'home',pathMatch: 'full'},
 ];

@@ -16,6 +16,7 @@ import { Inject, PLATFORM_ID } from '@angular/core';
 import { StarPiechart } from '../star-piechart/star-piechart';
 import { LikePiechart } from '../like-piechart/like-piechart';
 import { FeedbackService } from '../feedback-service';
+import { TagSection } from '../tag-section/tag-section';
 
 
 
@@ -51,7 +52,7 @@ const PORTAL_DATA: PortalElement[] = [
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule,StarPiechart,LikePiechart,MatTableModule,MatToolbarModule,MatIconModule,MatButtonModule,MatMenuModule,RouterModule ],
+  imports: [CommonModule,StarPiechart,LikePiechart,MatTableModule,MatToolbarModule,MatIconModule,MatButtonModule,MatMenuModule,RouterModule,TagSection ],
   providers: [provideCharts(withDefaultRegisterables()),FeedbackService],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css'

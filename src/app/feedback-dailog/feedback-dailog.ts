@@ -13,10 +13,12 @@ import { title } from 'process';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { MatChipInputEvent, MatChipsModule } from '@angular/material/chips';
+import { COMMA, ENTER } from '@angular/cdk/keycodes';
 
 @Component({
   selector: 'app-feedback-dailog',
-  imports: [ReactiveFormsModule,CommonModule,MatFormField,MatInputModule,MatIconModule,FormsModule,MatButtonModule,NgFor],
+  imports: [ReactiveFormsModule,CommonModule,MatFormField,MatInputModule,MatIconModule,FormsModule,MatButtonModule,NgFor,MatChipsModule],
   templateUrl: './feedback-dailog.html',
   styleUrl: './feedback-dailog.css'
 })
@@ -42,20 +44,53 @@ feedbackForm!: FormGroup;
   closeDialog() {
   this.dialogRef.close();
 }
+
   ngOnInit() {
     this.dataService.getAllFeedback().subscribe((res)=>{
       console.log(res);
     })
-  
+
+    
+  this.suggestedTags = [this.data.title];
   this.feedbackForm = this.fb.group({
     section:[this.data.title],
       comments: ['', [Validators.required, Validators.minLength(3)]],
       like: [false],
       dislike:[false],
       rating: [0, [Validators.min(1)]],
+      tag:[''],
       user_ID:1
     });
     this.cdr.detectChanges();
+}
+readonly separatorKeysCodes: number[] = [ENTER, COMMA];
+  suggestedTags: string[] = ['Project']; // default tag
+
+  addTag(event: MatChipInputEvent): void {
+    const input = event.input;
+    const value = event.value;
+
+    if ((value || '').trim()) {
+      this.suggestedTags.push(value.trim());
+    }
+
+    if (input) {
+      input.value = '';
+    }
+  }
+
+  removeTag(tag: string): void {
+    const index = this.suggestedTags.indexOf(tag);
+    if (index >= 0) {
+      this.suggestedTags.splice(index, 1);
+    }
+  }
+  submitTag(input: HTMLInputElement): void {
+  const value = input.value.trim();
+  if (value) {
+    this.suggestedTags.push(value);
+    input.value = '';
+  }
 }
 
   setReaction(type: 'like' | 'dislike') {
@@ -97,6 +132,7 @@ error:any;
     formData.append('rating', this.feedbackForm.get('rating')?.value);
     formData.append('comments', this.feedbackForm.get('comments')?.value);
     formData.append('user_ID', this.feedbackForm.get('user_ID')?.value);
+    formData.append('tag', this.suggestedTags.join(','));
 
     for (const [key, value] of formData.entries()) {
   console.log(`${key}:`, value);

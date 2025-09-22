@@ -276,7 +276,7 @@ text-transform: uppercase;
   width:180px;
   height: 16px;
   position: absolute;
-  top: 200px;
+  top: 350px;
   left:150px;
 
    color: #f44336; /* Material red shade */
@@ -285,3 +285,60 @@ text-transform: uppercase;
   margin-top: 4px;
   display: block;
   }
+
+  /* .tagdiv {
+  margin-top: 20px;
+} */
+/* .taginput {
+  width: 100%;
+  max-width: 400px;
+} */
+
+.mat-form-field .mat-icon-button {
+  margin-left: 8px;
+}
+.label5 {
+  /* font-weight: bold;
+  display: block;
+  margin-bottom: 5px; */
+
+  width: 36px;
+  height:20px;
+  /* top: 417px; */
+  /* left: 467px; */
+
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 142.857% */
+  letter-spacing: 0.25px;
+  /* padding-left: 31px; */
+}
+
+.taginput{
+  /* top: 490px;
+  left: 467px; */
+  /* margin-top: 5px; */
+  /* margin-left: 28px; */
+  width: 342px;
+  
+  /* height: 100px; */
+}
+/* ::ng-deep .tagIp{
+  background-color: #red; 
+} */
+.chips{
+  /* width: 36px; */
+  /* height:20px; */
+  /* top: 420px; */
+  /* left: 467px; */
+
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 142.857% */
+  letter-spacing: 0.25px;
+  /* padding-left: 31px; */
+}

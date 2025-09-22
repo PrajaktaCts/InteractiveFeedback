@@ -133,7 +133,7 @@ right: 40px;
     background-color: #E4E4E4;
     width: 1440px;
     /* height: 1024px; */
-    height: 1500px;
+    height: 2000px;
 }
 
 .pie-chart-container {
@@ -200,6 +200,67 @@ right: 40px;
     border-color: #DEDADA;
     position: absolute;
     background-color: white;
+}
+
+.tag-section{
+    width: 1396px;
+    height: 488px;
+    top: 590px;
+    /* left: 728px; */
+    border: 1px;
+    border-color: #DEDADA;
+    position: absolute;
+    background-color: white;
+}
+
+
+/* .portaldiv{
+    width: 1396px;
+    height: 100px;
+    top: 900px;
+    left: 21px;
+    position: absolute;
+    border-color: #DEDADA;
+    background-color: white;
+} */
+.tag-header{
+    
+    max-width: 1395px;
+    max-height: 47px;
+    /* max-height: 64px; */
+    top: 84px;
+    left: 1px;
+    border-bottom: 2px;
+    border-top-left-radius:8px ;
+    border-top-right-radius: 8px;
+    padding: 16px 30px;
+    gap: 8px;
+    background-color: #008CC3;
+}
+.tag-title{
+    width: 600px;
+    height: 20px;
+    max-width: 600px;
+    /* top: 84px;
+    left: 21px; */
+    font-family: Gotham;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 350;
+    line-height: 20px; /* 142.857% */
+    letter-spacing: 0.1px;
+    color: white;
+}
+.tagdiv2{
+    width: 1395px;
+    height: 174px;
+    top: 48px;
+    
+    /* left: 728px; */
+    /* border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px; */
+    /* background-color: #FFFFFF; */
+    gap: 2px;
 }
 .like-header{
     
@@ -287,11 +348,16 @@ right: 40px;
     width: 1395px;
     height: 174px;
     top: 48px;
+    
     /* left: 728px; */
     /* border-bottom-right-radius: 8px;
     border-bottom-left-radius: 8px; */
     /* background-color: #FFFFFF; */
     gap: 2px;
+}
+.portal-chart{
+    max-height: 500px;       /* vertical scroll limit */
+  overflow-y: auto;
 }
 table {
   width: 100%;

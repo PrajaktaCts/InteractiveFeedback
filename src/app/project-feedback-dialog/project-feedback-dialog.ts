@@ -6,15 +6,16 @@ import { MatIcon, MatIconModule } from '@angular/material/icon';
 import { Feedback } from '../feedback/feedback';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
-import { MatChipsModule } from '@angular/material/chips';
+import { MatChipInputEvent, MatChipsModule } from '@angular/material/chips';
 
 import {MatInputModule} from '@angular/material/input';
 import { FeedbackService } from '../feedback-service';
 import { ToastrService } from 'ngx-toastr';
+import { COMMA, ENTER } from '@angular/cdk/keycodes';
 
 @Component({
   selector: 'app-project-feedback-dialog',
-  imports: [ReactiveFormsModule,NgFor,MatIconModule,MatFormFieldModule,MatInputModule,MatButtonModule,CommonModule,MatChipsModule],
+  imports: [ReactiveFormsModule,NgFor,MatIconModule,MatFormFieldModule,MatInputModule,MatButtonModule,CommonModule,MatChipsModule,],
   templateUrl: './project-feedback-dialog.html',
   styleUrl: './project-feedback-dialog.css'
 })
@@ -55,29 +56,60 @@ onFileSelected(event: Event): void {
     this.selectedFile = input.files[0];
   }
 }
-suggestedTags: string[] = [];
-updateSuggestedTags(workedWell: string, improved: string) {
-  const combinedText = `${workedWell} ${improved}`.toLowerCase();
-  const keywords = ['performance', 'ui', 'speed', 'bugs', 'support', 'features', 'design', 'navigation'];
+// suggestedTags: string[] = [];
+// updateSuggestedTags(workedWell: string, improved: string) {
+//   const combinedText = `${workedWell} ${improved}`.toLowerCase();
+//   const keywords = ['performance', 'ui', 'speed', 'bugs', 'support', 'features', 'design', 'navigation'];
 
-  this.suggestedTags = keywords.filter(keyword => combinedText.includes(keyword));
-}
+//   this.suggestedTags = keywords.filter(keyword => combinedText.includes(keyword));
+// }
 
-removeTag(tag: string) {
-  this.suggestedTags = this.suggestedTags.filter(t => t !== tag);
+// removeTag(tag: string) {
+//   this.suggestedTags = this.suggestedTags.filter(t => t !== tag);
+// }
+
+readonly separatorKeysCodes: number[] = [ENTER, COMMA];
+  suggestedTags: string[] = ['Project']; // default tag
+
+  addTag(event: MatChipInputEvent): void {
+    const input = event.input;
+    const value = event.value;
+
+    if ((value || '').trim()) {
+      this.suggestedTags.push(value.trim());
+    }
+
+    if (input) {
+      input.value = '';
+    }
+  }
+
+  removeTag(tag: string): void {
+    const index = this.suggestedTags.indexOf(tag);
+    if (index >= 0) {
+      this.suggestedTags.splice(index, 1);
+    }
+  }
+
+  submitTag(input: HTMLInputElement): void {
+  const value = input.value.trim();
+  if (value) {
+    this.suggestedTags.push(value);
+    input.value = '';
+  }
 }
   ngOnInit(){
     console.log('ngOnInit called');
     
-    this.feedbackForm.get('workedWell')?.valueChanges.subscribe(value => {
-       console.log('Worked well changed:', value);
-    this.updateSuggestedTags(value, this.feedbackForm.get('improved')?.value);
-    console.log('Updated Tags:', this.suggestedTags);
-  });
+  //   this.feedbackForm.get('workedWell')?.valueChanges.subscribe(value => {
+  //      console.log('Worked well changed:', value);
+  //   this.updateSuggestedTags(value, this.feedbackForm.get('improved')?.value);
+  //   console.log('Updated Tags:', this.suggestedTags);
+  // });
 
-  this.feedbackForm.get('improved')?.valueChanges.subscribe(value => {
-    this.updateSuggestedTags(this.feedbackForm.get('workedWell')?.value, value);
-  });
+  // this.feedbackForm.get('improved')?.valueChanges.subscribe(value => {
+  //   this.updateSuggestedTags(this.feedbackForm.get('workedWell')?.value, value);
+  // });
   this.cdr.detectChanges();
   }
   

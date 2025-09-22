@@ -3,7 +3,7 @@
 <div class="dashboard">
 <mat-toolbar>
   <button matIconButton class="example-icon" aria-label="Example icon-button with menu icon">
-    <mat-icon>menu</mat-icon>
+    <mat-icon routerLink="/home">menu</mat-icon>
   </button>
   <span class="logo"><img  src="Images/Comcast_Advertising_logo 1.png" alt="logo"></span><br><br>
   <span class="admin">Admin Dashboard</span>
@@ -55,6 +55,8 @@
         <app-like-piechart *ngIf="isBrowser"></app-like-piechart>
         </div>
     </div>
+
+    
 
 <div class="feedbackdiv">
     <div class="feedback-header">
@@ -116,7 +118,7 @@
     <div class="feedback-header">
         <div class="feedback-title">Portal Level Feedback</div>
     </div>
-    <div class="chart">
+    <div class="portal-chart">
         <table mat-table [dataSource]="portalDataSource" class="mat-elevation-z8">
 
   <!--- Note that these columns can be defined in any order.
@@ -167,6 +169,18 @@
 </table>
 
 
+    </div>
+
+    <div class="tag-section">
+      <!-- <div class="tagdiv "> -->
+        <div class="tag-header">
+        <div class="tag-title">Tag Section</div>
+        </div>
+        <div class="tagdiv2">
+        <app-tag-section></app-tag-section>
+        </div>
+    <!-- </div> -->
+      
     </div>
 </div>
 </div>

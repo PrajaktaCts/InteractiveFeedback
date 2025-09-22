@@ -84,9 +84,21 @@ setupChart() {
       this.ratingPercentages[1]
     ];
     console.log(this.dataArr)
+    const total =
+  this.ratingPercentages[5] +
+  this.ratingPercentages[4] +
+  this.ratingPercentages[3] +
+  this.ratingPercentages[2] +
+  this.ratingPercentages[1];
 
   this.pieChartData = {
-    labels: ['5 Star', '4 Stars', '3 Stars', '2 Stars', '1 Stars'],
+    labels: [
+    `5 Stars (${((this.ratingPercentages[5] / total) * 100).toFixed(1)}%)`,
+    `4 Stars (${((this.ratingPercentages[4] / total) * 100).toFixed(1)}%)`,
+    `3 Stars (${((this.ratingPercentages[3] / total) * 100).toFixed(1)}%)`,
+    `2 Stars (${((this.ratingPercentages[2] / total) * 100).toFixed(1)}%)`,
+    `1 Star (${((this.ratingPercentages[1] / total) * 100).toFixed(1)}%)`
+  ],
     datasets: [{
       data: [this.ratingPercentages[5],this.ratingPercentages[4],this.ratingPercentages[3],this.ratingPercentages[2],this.ratingPercentages[1]],
       backgroundColor: ['#8979FF', '#FF928A', '#3CC3DF', '#FFAE4C', '#537FF1']

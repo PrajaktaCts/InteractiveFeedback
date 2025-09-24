@@ -81,7 +81,8 @@ color: #FFFFFF;
 .feedback-wrapper{
  
 width: 400px;
-height: 208px;
+/* height: 208px; */
+height: 338px;
 opacity: 1;
 top: 202px;
 left: 410px;
@@ -286,9 +287,10 @@ text-transform: uppercase;
   display: block;
   }
 
-  /* .tagdiv {
-  margin-top: 20px;
-} */
+  .tagdiv {
+  margin-top: -10px;
+  
+}
 /* .taginput {
   width: 100%;
   max-width: 400px;
@@ -296,6 +298,7 @@ text-transform: uppercase;
 
 .mat-form-field .mat-icon-button {
   margin-left: 8px;
+  
 }
 .label5 {
   /* font-weight: bold;
@@ -304,6 +307,8 @@ text-transform: uppercase;
 
   width: 36px;
   height:20px;
+  
+  
   /* top: 417px; */
   /* left: 467px; */
 
@@ -322,6 +327,8 @@ text-transform: uppercase;
   /* margin-top: 5px; */
   /* margin-left: 28px; */
   width: 342px;
+  padding-top: 5px;
+  
   
   /* height: 100px; */
 }
@@ -333,7 +340,8 @@ text-transform: uppercase;
   /* height:20px; */
   /* top: 420px; */
   /* left: 467px; */
-
+  padding-bottom: 10px;
+  margin-top: -15px;
   font-family: Roboto;
   font-size: 14px;
   font-style: normal;

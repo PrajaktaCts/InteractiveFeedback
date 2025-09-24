@@ -25,32 +25,35 @@ export class LikePiechart implements OnInit{
 
   likePercent: number = 0;
   dislikePercent: number = 0;
+  likeCount: number = 0;
+  dislikeCount :number=0;
   getAllFeedback(){
     this.dataser.getAllFeedback().subscribe((res)=>{
       console.log(res[0]);
       const totalFeedback = res.length;
-      const likeCount = res.filter((item: { like: any; }) => item.like).length;
-    const dislikeCount = res.filter((item: { dislike: any; }) => item.dislike).length;
+      this.likeCount = res.filter((item: { like: any; }) => item.like).length;
+    this.dislikeCount = res.filter((item: { dislike: any; }) => item.dislike).length;
 
     // console.log(`Likes: ${likeCount}, Dislikes: ${dislikeCount}`);
     // Calculate percentages
-    const likePercentage = totalFeedback > 0 ? (likeCount / totalFeedback) * 100 : 0;
-    const dislikePercentage = totalFeedback > 0 ? (dislikeCount / totalFeedback) * 100 : 0;
+    const likePercentage = totalFeedback > 0 ? (this.likeCount / totalFeedback) * 100 : 0;
+    const dislikePercentage = totalFeedback > 0 ? (this.dislikeCount / totalFeedback) * 100 : 0;
 
-    console.log(`Likes: ${likeCount} (${likePercentage.toFixed(2)}%)`);
-    console.log(`Dislikes: ${dislikeCount} (${dislikePercentage.toFixed(2)}%)`);
-
+    // console.log(`Likes: ${this.likeCount} (${likePercentage.toFixed(2)}%)`);
+    // console.log(`Dislikes: ${this.dislikeCount} (${dislikePercentage.toFixed(2)}%)`);
+      console.log("Likes Count:",this.likeCount);
+      console.log("dislikes Count:",this.dislikeCount);
     // You can store these too
     this.likePercent = parseFloat(likePercentage.toFixed(2));
     this.dislikePercent = parseFloat(dislikePercentage.toFixed(2));
-    console.log(this.likePercent,this.dislikePercent);
+    // console.log(this.likePercent,this.dislikePercent);
     this.setupChart();
     });
   }
 
   setupChart(){
     
-console.log('LikePercentage',this.likePercent)
+//console.log('LikePercentage',this.likePercent)
 const total = this.likePercent + this.dislikePercent;
   this.pieChartData = {
     labels: [
@@ -58,7 +61,7 @@ const total = this.likePercent + this.dislikePercent;
     `Dislikes (${((this.dislikePercent / total) * 100).toFixed(2)}%)`
   ],
     datasets: [{
-      data: [this.likePercent ,this.dislikePercent],
+      data: [this.likeCount ,this.dislikeCount],
       backgroundColor: ['#008CC3', '#B42846']
     }]
   };

@@ -22,6 +22,7 @@ export class StarPiechart implements OnInit {
    ratingPercentages: { [key: number]: number } = {};
    dataArr:any;
    userId:any;
+   ratingCounts: { [key: number]: number } = {};
   getAllFeedback(){
     const ratings: number[] = [];
     this.dataser.getAllFeedback().subscribe((res)=>{
@@ -58,8 +59,14 @@ export class StarPiechart implements OnInit {
       const count = ratings.filter(r => r === i).length;
       const percent = total > 0 ? (count / total) * 100 : 0;
       this.ratingPercentages[i] = parseFloat(percent.toFixed(2)); // Round to 2 decimal places
+      this.ratingCounts[i]=count;
+      //console.log("Ratings count:", count);
     }
-
+      console.log("Ratings count 1:",this.ratingCounts[1]);
+      console.log("Ratings count 2:",this.ratingCounts[2]);
+      console.log("Ratings count 3:",this.ratingCounts[3]);
+      console.log("Ratings count 4:",this.ratingCounts[4]);
+      console.log("Ratings count 5:",this.ratingCounts[5]);
     console.log("Ratings in %:", this.ratingPercentages);  
     // console.log(this.ratingPercentages[5])
     this.setupChart();
@@ -100,7 +107,7 @@ setupChart() {
     `1 Star (${((this.ratingPercentages[1] / total) * 100).toFixed(1)}%)`
   ],
     datasets: [{
-      data: [this.ratingPercentages[5],this.ratingPercentages[4],this.ratingPercentages[3],this.ratingPercentages[2],this.ratingPercentages[1]],
+      data: [this.ratingCounts[5],this.ratingCounts[4],this.ratingCounts[3],this.ratingCounts[2],this.ratingCounts[1]],
       backgroundColor: ['#8979FF', '#FF928A', '#3CC3DF', '#FFAE4C', '#537FF1']
     }]
   };

@@ -1,15 +1,21 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { CloudData, CloudOptions, TagCloudComponent } from 'angular-tag-cloud-module';
 import { FeedbackService } from '../feedback-service';
+import { CommonModule } from '@angular/common';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-tag-section',
-  imports: [TagCloudComponent],
+  standalone: true,
+  imports: [CommonModule,TagCloudComponent,HttpClientModule],
+   providers: [FeedbackService],
   templateUrl: './tag-section.html',
   styleUrl: './tag-section.css'
 })
 export class TagSection implements OnInit {
-  constructor(private dataser:FeedbackService,private cdr: ChangeDetectorRef){console.log('Cloud tags created');}
+  constructor(private dataser:FeedbackService,private cdr: ChangeDetectorRef){
+    console.log('Cloud tags created');
+  }
  
 options: CloudOptions = {
     width: 1000,

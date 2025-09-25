@@ -1,7 +1,13 @@
 .scroll-container {
   scroll-behavior: smooth;
 }
-
+.required {
+    display: inline;
+  color: red;
+  font-weight: bold;
+  margin-left: 4px;
+  
+}
 ::ng-deep .mat-mdc-dialog-surface {
 /* background-color: #008CC3; */
 /* border-radius: 0!important;
@@ -277,7 +283,7 @@ text-transform: uppercase;
   width:180px;
   height: 16px;
   position: absolute;
-  top: 350px;
+  top: 345px;
   left:150px;
 
    color: #f44336; /* Material red shade */

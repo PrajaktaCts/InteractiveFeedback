@@ -28,7 +28,7 @@ openInfoDialog() {
     },
     width: '400px',
     height: '251px !important',
-    position: { top: '159px', left: '410px' },
+    position: { top: '109px', left: '410px' }, //top:159px
     panelClass: 'custom-dialog-style'
     
   });

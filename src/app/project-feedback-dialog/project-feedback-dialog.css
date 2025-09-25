@@ -15,7 +15,8 @@ box-shadow: none !important;
 } */
 .feedback-Content{
 width: 568px;
-height: 477px;
+/* height: 477px; */
+height: 600px;
 top: 96px;
 left: 436px;
 }
@@ -285,7 +286,8 @@ text-transform: uppercase;
 } 
 .outside{
   padding-left: 31px;
-  padding-top: 26px;
+  /* padding-top: 26px; */
+  padding-top: 10px;
   padding-bottom: 20px;
 }
 .submit-btn{
@@ -403,6 +405,7 @@ letter-spacing: 0.25px;
   /* height:20px; */
   top: 420px;
   left: 467px;
+  margin-top:-14px;
 
   font-family: Roboto;
   font-size: 14px;
@@ -410,5 +413,5 @@ letter-spacing: 0.25px;
   font-weight: 400;
   line-height: 20px; /* 142.857% */
   letter-spacing: 0.25px;
-  /* padding-left: 31px; */
+  padding-left: 31px;
 }

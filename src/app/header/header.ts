@@ -27,7 +27,7 @@ toggleSideNav() {
       
       width:'568px',
       height:'477px !important',
-      position: { top: '96px', left: '436px' },
+      position: { top: '36px', left: '436px' }, //top:96px
       panelClass: 'hover-dialog'
     });
   }
